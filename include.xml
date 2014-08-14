@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<ndll name="jwchartboost" if="ios" />
+	<dependency name="StoreKit.framework" if="ios" />
+	<dependency name="QuartzCore.framework" if="ios" />
+	<dependency name="SystemConfiguration.framework" if="ios" />
+	<dependency name="CoreGraphics.framework" if="ios" />
+	<dependency name="AdSupport.framework" if="ios" />
+	<dependency name="CoreMedia.framework" if="ios" />
+	<dependency name="AVFoundation.framework" if="ios" />
+	<dependency name="CoreData.framework" if="ios" />
+	
+</project>
