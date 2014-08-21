@@ -11,10 +11,10 @@ class JWChartboost {
 		#end
 	}
 	
-	public static function showInterstitial():Void
+	public static function showInterstitial(location:String = "Home Screen"):Void
 	{
 		#if ios
-		chartboost_showinterstitial();
+		chartboost_showinterstitial(location);
 		#end
 	}
 	
@@ -25,7 +25,7 @@ class JWChartboost {
 	private static var chartboost_initialize = 
 		Lib.load ("jwchartboost", "jwchartboost_initialize", 2);
 	private static var chartboost_showinterstitial = 
-		Lib.load ("jwchartboost", "jwchartboost_show_interstitial", 0);
+		Lib.load ("jwchartboost", "jwchartboost_show_interstitial", 1);
 	#end
 	
 }

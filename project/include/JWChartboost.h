@@ -6,7 +6,7 @@ namespace jwchartboost
     extern "C"
     {	
 	    void initChartboost(const char *sAppId, const char *sSig);
-        void showInterstitial();
+        void showInterstitial(const char *sLoc);
     }
 }
 

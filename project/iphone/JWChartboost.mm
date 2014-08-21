@@ -6,7 +6,7 @@
 @interface JWChartboost: NSObject <ChartboostDelegate>
 
 - (void)initWithId: (NSString*) appId appSignature:(NSString*) appSig;
-- (void)showInterstitial;
+- (void)showInterstitial: (NSString*) location;
 
 @end
 
@@ -17,9 +17,14 @@
     [Chartboost startWithAppId: appId appSignature: appSig delegate:self];
 }
 
-- (void)showInterstitial
+- (void)showInterstitial: (NSString*) location
 {
-    [[Chartboost sharedChartboost] showInterstitial: CBLocationHomeScreen];
+    [[Chartboost sharedChartboost] showInterstitial: location];
+}
+
+- (BOOL)shouldRequestInterstitialsInFirstSession 
+{
+    return NO;
 }
 
 @end
@@ -36,8 +41,9 @@ extern "C"
         [chartboost initWithId: appId appSignature: sig];
 	}
 	
-    void showInterstitial()
+    void showInterstitial(const char *sLoc)
     {
-        [chartboost showInterstitial];
+		NSString *loc = [ [NSString alloc] initWithUTF8String: sLoc ];
+        [chartboost showInterstitial: loc];
     }
 }

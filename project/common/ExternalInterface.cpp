@@ -24,14 +24,14 @@ static value jwchartboost_initialize(value appId, value sig)
 DEFINE_PRIM (jwchartboost_initialize, 2);
 
 
-static value jwchartboost_show_interstitial() 
+static value jwchartboost_show_interstitial(value loc) 
 {
 	#ifdef IPHONE
-	showInterstitial();
+	showInterstitial(val_string(loc));
 	#endif
 	return alloc_null();
 }
-DEFINE_PRIM (jwchartboost_show_interstitial, 0);
+DEFINE_PRIM (jwchartboost_show_interstitial, 1);
 
 extern "C" void jwchartboost_main() 
 {
